@@ -1,0 +1,32 @@
+/* CompleteWatch.module.css */
+
+.container {
+    text-align: flex-start;
+    /* padding-left: 9%; */
+  }
+  
+  .watchContainer {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .watchFace {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .straps {
+    display: block;
+  }
+  
+  .logo {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure logo is behind the watch needles */
+    max-width: 20%; /* Adjust the size of the logo */
+    max-height: 20%; /* Adjust the size of the logo */
+  }
+  
