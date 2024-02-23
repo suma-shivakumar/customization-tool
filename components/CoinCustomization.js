@@ -2,9 +2,8 @@ import React from "react";
 import styles from "./CompleteWatch.module.css";
 import { Box, MenuItem, Select, Typography } from "@mui/material";
 
-const CompleteWatch = ({
+const CoinCustomization = ({
   watchFaceUrl,
-  strapsUrl,
   logoUrl,
   message,
   textColor,
@@ -26,27 +25,6 @@ const CompleteWatch = ({
         }}
       >
         <Box
-        // sx={{
-        //   display: "flex",
-        //   justifyContent: "center",
-        //   width: "500px",
-        //   alignItems: "center",
-        //   // backgroundColor: "yellow",
-        // }}
-        >
-          <img
-            src={strapsUrl}
-            alt="Straps"
-            // className={styles.straps}
-            style={{
-              width: "300px",
-              height: "500px",
-              objectFit: "contain",
-              display: "block",
-            }}
-          />
-        </Box>
-        <Box
           // sx={{
           //   display: "flex",
           //   justifyContent: "center",
@@ -63,33 +41,70 @@ const CompleteWatch = ({
             style={{ width: "260px", height: "260px", objectFit: "contain" }}
           />
         </Box>
-        {logoUrl && (
+        {/* {logoUrl && (
           <Box
-          // sx={{
-          //   position: "absolute",
-          //   top: "60%",
-          //   left: "50%",
-          //   transform: "translate(-50%, -50%)",
-          //   zIndex: 1,
-          //   maxWidth: "20%",
-          //   maxHeight: "20%",
-          // }}
+            style={{
+              position: "absolute",
+              top: "45%",
+              left: "52%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 1,
+              maxWidth: "20%",
+              maxHeight: "20%",
+              mixBlendMode: "multiply",
+              filter: "drop-shadow(2px 2px 2px rgba(0,0,0,0.5))",
+            }}
           >
             <img
               src={logoUrl}
               alt="Logo"
               style={{
-                position: "absolute",
-                top: "55%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                zIndex: 1,
-                maxWidth: "20%",
-                maxHeight: "20%",
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+                filter: "brightness(0.8) grayscale(1) contrast(1.2)",
               }}
             />
           </Box>
+        )} */}
+
+        {logoUrl && (
+          <Box
+            style={{
+              position: "absolute",
+              top: "45%",
+              left: "52%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 1,
+              maxWidth: "20%",
+              maxHeight: "20%",
+              textAlign: "center",
+            }}
+          >
+            <div className={styles.coinLogo}>
+              <img src={logoUrl} alt="Logo" />
+            </div>
+          </Box>
         )}
+
+        {/* {logoUrl && (
+          <Box
+            style={{
+              position: "absolute",
+              top: "45%",
+              left: "52%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 1,
+              maxWidth: "20%",
+              maxHeight: "20%",
+              textAlign: "center",
+            }}
+          >
+            <div className={styles.coinText}>
+              <span>{message}</span>
+            </div>
+          </Box>
+        )} */}
         {message && (
           <Box
             sx={{
@@ -109,10 +124,23 @@ const CompleteWatch = ({
           >
             <Typography
               variant="subtitle1"
-              style={{ fontFamily: fontFamily, color: textColor }}
+              style={{
+                fontFamily: fontFamily,
+                color: textColor,
+                // color: "#666",
+                position: "relative",
+                width: "100%",
+                height: "50%",
+                padding: "10px",
+                left: "5px",
+                textShadow: "1px 1px 1px #fff, -1px -1px 1px #000",
+              }}
             >
               {message}
             </Typography>
+            {/* <div className={styles.coinText}>
+              <span>{message}</span>
+            </div> */}
           </Box>
         )}
 
@@ -122,4 +150,4 @@ const CompleteWatch = ({
   );
 };
 
-export default CompleteWatch;
+export default CoinCustomization;

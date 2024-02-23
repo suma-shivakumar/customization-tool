@@ -13,16 +13,18 @@ import {
 } from "@mui/material";
 import CompleteWatch from "@/components/CompleteWatch";
 import { ChromePicker } from "react-color";
+import CoinCustomization from "@/components/CoinCustomization";
 
 const IndexPage = () => {
-  const [watchFace, setWatchFace] = useState(
-    "../asset/images/watchface/Dial 1.png"
+  const [watchFace, setWatchFace] = useState("../asset/images/silvercoin.png");
+  const [silverCoin, setSilverCoin] = useState(
+    "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.bhimagold.com%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fd1bpnn2a5id540.cloudfront.net%252F1653277918007%252F42122331-d43a-11ed-8a0e-39fda0b4104a.jpg%26w%3D1200%26q%3D75&tbnid=ZUDTWNOvpoHCNM&vet=12ahUKEwiFsIehzL-EAxUFmWMGHRq2AicQMygMegQIARBn..i&imgrefurl=https%3A%2F%2Fwww.bhimagold.com%2Fproducts%2F75gm-plain-silver-coin-slcn75pla&docid=YETT_pQeaIFOJM&w=1200&h=1200&q=plain%20gold%20and%20silver%20coin&safe=active&ved=2ahUKEwiFsIehzL-EAxUFmWMGHRq2AicQMygMegQIARBn"
   );
-  const [straps, setStraps] = useState("../asset/images/straps/Strap 1.png");
+  //   const [straps, setStraps] = useState("../asset/images/straps/Strap 1.png");
   const [logo, setLogo] = useState(null);
   const [message, setMessage] = useState("");
   const [fontFamily, setFontFamily] = useState("Arial");
-  const [textColor, setTextColor] = useState("#000000");
+  const [textColor, setTextColor] = useState("#666");
   const canvasRef = useRef(null);
 
   const handleWatchFaceChange = (imageUrl) => {
@@ -90,48 +92,21 @@ const IndexPage = () => {
 
   return (
     <div>
-      <Typography variant="h1">Watch Customization Tool</Typography>
+      <Typography variant="h1">Coin Customization Tool</Typography>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Typography variant="h4">Watch Face</Typography>
+          <Typography variant="h4">Coin Face</Typography>
 
           <Button
             variant="outlined"
             onClick={() =>
-              handleWatchFaceChange("../asset/images/watchface/Dial 1.png")
+              handleWatchFaceChange("../asset/images/silvercoin.png")
             }
           >
             {/* Option 2 */}
             {/* <img src={'https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-45-aluminum-pink-nc-s9_VW_PF+watch-face-45-bhm-sport-band-unitybloom-202401_VW_PF?wid=500&hei=500&fmt=png-alpha&.v=VHdBZlF5amgxMUlTcnA3cVdyS25DNldIczNiRGpkdWZDVmdKeE1iaUlPTEpBelFSNmxJdTBIZGc2Z0MwaXVvRCtSM3VNT2JXVnpVZnQ3WlYvL0x1TnVFV0dpU0xxT1hDVUo0U3ptd0Ntb0NYZ3pCMEN2N2dodUlIRS9qMDNsSmFEc1lLS2lGSE9pajR4MzFVRjVTbktzZXAvamFPcVF2ZktTZmxsbU1QQjVPRktWZXpEVmY5ckx2Y0lmZTlFN0pk'} alt='' /> */}
             <img
-              src={"../asset/images/watchface/Dial 1.png"}
-              alt=""
-              style={{ width: "300px", height: "300px" }}
-            />
-          </Button>
-          <Button
-            variant="outlined"
-            onClick={() =>
-              handleWatchFaceChange("../asset/images/watchface/Dial 2.png")
-            }
-          >
-            {/* Option 1 */}
-            <img
-              src={"../asset/images/watchface/Dial 2.png"}
-              alt=""
-              style={{ width: "300px", height: "300px" }}
-            />
-          </Button>
-
-          <Button
-            variant="outlined"
-            onClick={() =>
-              handleWatchFaceChange("../asset/images/watchface/Dial 3.png")
-            }
-          >
-            {/* Option 1 */}
-            <img
-              src={"../asset/images/watchface/Dial 3.png"}
+              src={"../asset/images/silvercoin.png"}
               alt=""
               style={{ width: "300px", height: "300px" }}
             />
@@ -139,50 +114,7 @@ const IndexPage = () => {
 
           {/* <WatchFace imageUrl={watchFace} logoUrl={logo} /> */}
         </Grid>
-        <Grid item xs={12}>
-          <Typography variant="h4">Straps</Typography>
-          <Button
-            variant="outlined"
-            onClick={() =>
-              handleStrapsChange("../asset/images/straps/Strap 1.png")
-            }
-          >
-            {/* Option 1 */}
-            <img
-              src={"../asset/images/straps/Strap 1.png"}
-              alt=""
-              style={{ width: "300px", height: "500px" }}
-            />
-          </Button>
-          <Button
-            variant="outlined"
-            onClick={() =>
-              handleStrapsChange("../asset/images/straps/Strap 2.png")
-            }
-          >
-            {/* Option 2 */}
-            <img
-              src={"../asset/images/straps/Strap 2.png"}
-              alt=""
-              style={{ width: "300px", height: "500px" }}
-            />
-          </Button>
-          {/* <Straps imageUrl={straps} logoUrl={logo} /> */}
 
-          <Button
-            variant="outlined"
-            onClick={() =>
-              handleStrapsChange("../asset/images/straps/Strap 3.png")
-            }
-          >
-            {/* Option 2 */}
-            <img
-              src={"../asset/images/straps/Strap 3.png"}
-              alt=""
-              style={{ width: "300px", height: "500px" }}
-            />
-          </Button>
-        </Grid>
         <Grid item xs={12}>
           <Typography variant="h4">Upload Logo</Typography>
           <input type="file" accept="image/*" onChange={handleLogoUpload} />
@@ -227,36 +159,17 @@ const IndexPage = () => {
             />
           </Box>
         </Grid>
-        {/* <Grid item xs={12}>
-          <Typography variant="h4">Select Font</Typography>
-          <Select value={fontFamily} onChange={handleFontFamilyChange}>
-            <MenuItem value="Arial">Arial</MenuItem>
-            <MenuItem value="Times New Roman">Times New Roman</MenuItem>
-            <MenuItem value="Verdana">Verdana</MenuItem>
-            Add more font options as needed
-          </Select>
-        </Grid> */}
-        {/* <Grid item xs={12}>
-          <Typography variant="h4">Select Text Color</Typography>
-          <ChromePicker
-            color={textColor}
-            onChangeComplete={handleTextColorChange}
-          />
-        </Grid> */}
+
         <Grid item xs={12}>
           <canvas ref={canvasRef} style={{ display: "none" }} />
-          <CompleteWatch
+          <CoinCustomization
             watchFaceUrl={watchFace}
-            strapsUrl={straps}
             logoUrl={logo}
             message={message}
             textColor={textColor}
             fontFamily={fontFamily}
           />
         </Grid>
-        {/* <Grid item xs={12}>
-          <Button variant="outlined" onClick={handleDownload}>Download Complete Watch</Button>
-        </Grid> */}
       </Grid>
     </div>
   );
