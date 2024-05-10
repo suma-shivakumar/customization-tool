@@ -1,0 +1,34 @@
+.watchContainer {
+    position: relative;
+    width: 400px; /* Adjust dimensions according to your design */
+    height: 400px; /* Adjust dimensions according to your design */
+  }
+  
+  .watchOverlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .watchFace, .watchStraps {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .watchStraps {
+    z-index: 1; /* Ensure straps appear on top of the watch face */
+  }
+  
+  .customizationPanel {
+    position: absolute;
+    top: 20px; /* Adjust positioning */
+    right: 20px; /* Adjust positioning */
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
